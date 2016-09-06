@@ -1,0 +1,84 @@
+#!/usr/bin/env bash
+
+# This is less scripting and more of a friendly wiki-script
+#
+# Basically - I am lazy - and this makes Installing warcraft much easer..
+#                           ..Kris
+
+# Load config and dependencies
+. Deps
+. Config
+
+# Install Wineskin
+mkdir -p $INSTALL_DIR
+cd $INSTALL_DIR
+wget -nc $WINESKIN_DOWNLOAD -O $WINESKIN_NAME
+unzip -o $WINESKIN_NAME
+mkdir -p "${APP_DIR}/${WINESKIN_APP_NAME}"
+cp -rvf "${WINESKIN_APP_NAME}" "${APP_DIR}"
+
+# Install XQuartz
+cd $INSTALL_DIR
+wget -nc $XQUARTZ_DOWNLOAD
+hdiutil attach $XQUARTZ_NAME
+
+# Start cinema
+clear
+echo ""
+echo "Welcome to the Warcraft 3 Installer script. "
+
+echo "Opening the Wineskin console, and the XQuartz wizard. Run through the install wizard then come back here."
+echo ""
+# Sudo
+echo "Please enter your sudo password..."
+
+# Open Wineskin
+sudo open "${APP_DIR}/${WINESKIN_APP_NAME}"
+
+# Open XQuartz installer
+sudo open /Volumes/$XQUARTZ/XQuartz.pkg
+
+# Deps are done
+clear
+echo "You should now have XQuartz and Wineskin installed."
+echo ""
+read -n 1 -s -p "Press any key to continue"
+
+# Wineskin wrapper wiki
+clear
+echo "1) -Create New Blank Wrapper- in Wineskin"
+echo "2) Call it -WarcraftIII-'"
+echo "3) Install Mono and Gecko"
+echo "4) -View Wrapper in Finder-"
+echo "5) Right click -WarcraftIII- -> Show Package Contents -> Wineskin"
+read -n 1 -s -p "Press any key to log into Battle.net"
+open https://us.battle.net/account/management/
+clear
+
+# RoC downloader..
+echo "[REIGN OF CHAOS]"
+echo "1) Download the installer [WINDOWS]"
+open "https://us.battle.net/account/management/classic-games.html?license=9"
+echo "2) Install New Software -> Choose Setup Executable -> ~/Downloads/.exe"
+echo "3) Install to Desktop"
+echo "4) Wait for the Downloader and Install with your CD-KEY"
+echo "5) Do NOT play - Move on to install TFT"
+read -n 1 -s -p "Press any key to continue"
+
+# TFT downloader..
+echo "[REIGN OF CHAOS]"
+echo "1) Download the installer [WINDOWS]"
+open https://us.battle.net/account/management/classic-games.html?license=13
+echo "2) Install New Software -> Choose Setup Executable -> ~/Downloads/.exe"
+echo "3) Install to Desktop"
+echo "4) Wait for the Downloader and Install with your CD-KEY"
+read -n 1 -s -p "Press any key to continue"
+
+# Fin
+clear
+echo ""
+echo ""
+echo "Fin"
+echo ""
+echo ""
+exit 0

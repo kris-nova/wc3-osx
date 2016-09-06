@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Global
+INSTALL_DIR=$HOME/Warcraft3
+APP_DIR=$HOME/Applications
+
+# Wineskin
+WINESKIN_DOWNLOAD="http://downloads.sourceforge.net/project/wineskin/Wineskin%20Winery.app%20Version%201.7.zip?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fwineskin%2Ffiles%2FWineskin%2520Winery.app%2520Version%25201.7.zip%2Fdownload%3Fuse_mirror%3Dheanet%26r%3Dhttp%253A%252F%252Fwineskin.urgesoftware.com%252Ftiki-index.php%253Fpage%253DDownloads%26use_mirror%3Dheanet&ts=1473126871&use_mirror=pilotfiber"
+WINESKIN_NAME="Wineskin-1.7.zip"
+WINESKIN_APP_NAME="Wineskin Winery.app"
+
+# XQuartz
+XQUARTZ_DOWNLOAD="https://dl.bintray.com/xquartz/downloads/XQuartz-2.7.9.dmg"
+XQUARTZ_NAME="XQuartz-2.7.9.dmg"
+XQUARTZ="XQuartz-2.7.9"
